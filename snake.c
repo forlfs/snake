@@ -5,7 +5,7 @@
 #define	W	80
 #define	H	30
 #define	L	(H*W)
-#define	LL	10
+#define	A	10
 #define	T	200
 char x[W][H]={0};
 int dx=0,dy=-1;
@@ -113,7 +113,7 @@ void run(){
 		ax=snake.q[snake.r-1].x+dx;
 		ay=snake.q[snake.r-1].y+dy;
 		if(ax<0||ay<0||ax>W-1||ay>H-1||x[ax][ay]==1){
-			print(0,0,"you lose");
+			print(0,0,"WA");
 			sleep(-1);
 			return;
 		}
@@ -131,8 +131,8 @@ void run(){
 		x[snake.q[snake.r].x][snake.q[snake.r].y]=1;
 		print(snake.q[snake.r].x,snake.q[snake.r].y,"1");
 		snake.r=(snake.r+1)%L;
-		if(snake.r-snake.l>LL){
-			print(0,0,"you win");
+		if(snake.r-snake.l>A){
+			print(0,0,"AC");
 			sleep(-1);
 			return;
 		}
