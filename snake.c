@@ -227,7 +227,7 @@ void run(){
 			return;
 		}
 #ifdef	WIN32
-		sleep(T);
+		Sleep(T);
 #else
 		usleep(T);
 #endif
